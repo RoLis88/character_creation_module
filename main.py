@@ -3,7 +3,8 @@ from random import randint
 from graphic_arts.start_game_banner import run_screensaver
 
 
-def attack(char_name: str, cha_class: str) -> str:
+def attack(char_name: str, char_class: str) -> str:
+    """Вычисляет нанесенный урон противнику."""
     if char_class == 'warrior':
         damage = 5 + randint(3, 5)
     if char_class == 'mage':
@@ -14,6 +15,7 @@ def attack(char_name: str, cha_class: str) -> str:
 
 
 def defence(char_name: str, char_class: str) -> str:
+    """Вычисляет заблокированный урон."""
     if char_class == 'warrior':
         block = 10 + randint(5, 10)
     if char_class == 'mage':
@@ -24,6 +26,7 @@ def defence(char_name: str, char_class: str) -> str:
 
 
 def special(char_name: str, char_class: str) -> str:
+    """Вычисляет силу примененной защиты."""
     if char_class == 'warrior':
         skil = 80 + 25
     if char_class == 'mage':
@@ -34,6 +37,10 @@ def special(char_name: str, char_class: str) -> str:
 
 
 def start_training(char_name: str, char_class: str) -> str:
+    """
+    Запускает режим тренировки.
+    Действие определяется вводимой игроком командой.
+    """
     if char_class == 'warrior':
         print(f'{char_name}, ты Воитель — отличный боец ближнего боя.')
     if char_class == 'mage':
@@ -58,6 +65,7 @@ def start_training(char_name: str, char_class: str) -> str:
 
 
 def choice_char_class() -> str:
+    """Выбор игроком класса персонажа из предложенных вариантов."""
     approve_choice: str = ''
     char_class: str = ''
     while approve_choice != 'y':
